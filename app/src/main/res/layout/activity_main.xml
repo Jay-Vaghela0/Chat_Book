@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#A6CDF3">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="72dp"
+        android:layout_height="64dp"
+        android:src="@drawable/avatar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="0dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img2"
+        android:layout_width="72dp"
+        android:layout_height="64dp"
+        android:src="@drawable/avatar2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="0dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img3"
+        android:layout_width="72dp"
+        android:layout_height="64dp"
+        android:src="@drawable/avatar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="0dp" />
+
+    <EditText
+        android:id="@+id/room_name_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toStartOf="@+id/btn_add_room"
+        android:layout_toLeftOf="@+id/btn_add_room"
+        android:alpha="0.7"
+        android:background="#A8FFFFFF" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create room"
+        android:id="@+id/btn_add_room"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:enabled="false"
+        android:background="#9A4CAF50"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="336dp"
+        android:layout_height="wrap_content"
+        android:splitMotionEvents="true"
+        android:layout_above="@+id/room_name_edittext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp" />
+
+</RelativeLayout>

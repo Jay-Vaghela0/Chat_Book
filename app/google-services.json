@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "551360201974",
+    "firebase_url": "https://chat-book-32ab1.firebaseio.com",
+    "project_id": "chat-book-32ab1",
+    "storage_bucket": "chat-book-32ab1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551360201974:android:cfb2ceadbbefa91ec358d7",
+        "android_client_info": {
+          "package_name": "com.jayvaghela.chatbookmlx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551360201974-0gfr1snuphuonpqt4q9guqli42if2tij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jayvaghela.chatbookmlx",
+            "certificate_hash": "ad92ae5650a5f75a74e4f4884fe0782e061e71bc"
+          }
+        },
+        {
+          "client_id": "551360201974-1sii1sf4461bido3n3i10of3godc7lb5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_92xsGAHxMhBemhrdE46DLT7LJblQ-cQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551360201974-1sii1sf4461bido3n3i10of3godc7lb5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
