@@ -29,17 +29,6 @@
         android:layout_marginTop="67dp"
         android:layout_marginEnd="0dp" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img3"
-        android:layout_width="72dp"
-        android:layout_height="64dp"
-        android:src="@drawable/avatar3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="0dp" />
-
     <EditText
         android:id="@+id/room_name_edittext"
         android:layout_width="wrap_content"
@@ -73,9 +62,7 @@
         android:splitMotionEvents="true"
         android:layout_above="@+id/room_name_edittext"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginLeft="75dp" />
+        android:layout_marginStart="75dp" />
 
 </RelativeLayout>

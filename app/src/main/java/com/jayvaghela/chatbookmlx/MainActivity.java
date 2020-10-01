@@ -4,9 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,9 +29,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
  * Created by Jay Vaghela on 8-11-2019
- *
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -42,38 +41,31 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-
         Button add_room = findViewById(R.id.btn_add_room);
         room_name = findViewById(R.id.room_name_edittext);
         ListView listView = findViewById(R.id.listView);
-        arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list_of_rooms);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list_of_rooms);
         listView.setAdapter(arrayAdapter);
 
+        //Ask user to enter username first
+
         request_user_name();
-
-
-
-
         add_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Map<String,Object> map = new HashMap<>();
-                map.put(room_name.getText().toString(),"");
+                Map<String, Object> map = new HashMap<>();
+                map.put(room_name.getText().toString(), "");
                 root.updateChildren(map);
 
             }
         });
-
-
-
 
 
         root.addValueEventListener(new ValueEventListener() {
@@ -99,22 +91,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Intent intent = new Intent(getApplicationContext(),Chat_Room.class);
-                intent.putExtra("room_name",((TextView)view).getText().toString() );
-                intent.putExtra("user_name",name);
-                startActivity(intent);
+                Intent intentChatroom = new Intent(getApplicationContext(), Chat_Room.class);
+                intentChatroom.putExtra("room_name", ((TextView) view).getText().toString());
+                intentChatroom.putExtra("user_name", name);
+                startActivity(intentChatroom);
             }
         });
 
     }
-
-
 
 
     private void request_user_name() {
@@ -128,7 +116,9 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                name = input_field.getText().toString();
+                if (name != null) //check for null user 
+                    name = input_field.getText().toString();
+                request_user_name();
             }
         });
 
